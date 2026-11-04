@@ -1,0 +1,27 @@
+[project]
+name = "ml-base"
+version = "0.1.0"
+description = "Pipeline end-to-end de ML con API y CI/CD"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pandas>=2.2",
+    "scikit-learn>=1.4",
+    "pandera>=0.19",
+    "mlflow>=2.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov", "ruff", "httpx", "pre-commit"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
